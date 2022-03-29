@@ -23,7 +23,9 @@ const onClickAdd = () => {
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
   deleteButton.addEventListener("click", () => {
-    alert("削除");
+    // 押された削除ボタンの親タグ（ul）を未完了リストから削除
+    const deleteTaret = deleteButton.parentNode;
+    document.getElementById("incomplete-list").removeChild(deleteTaret);
   });
 
   // ulタグの子要素に各要素を設定
@@ -32,7 +34,7 @@ const onClickAdd = () => {
   ul.appendChild(deleteButton);
 
   // 未完了リストに追加
-  document.getElementById("inconplete-list").appendChild(ul);
+  document.getElementById("incomplete-list").appendChild(ul);
 };
 
 document
